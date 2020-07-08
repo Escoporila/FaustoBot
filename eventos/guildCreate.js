@@ -1,12 +1,25 @@
-const low = require("lowdb");
-const FileSync = require("lowdb/adapters/FileSync");
-const adapter = new FileSync("banco.json");
-const db = low(adapter);
-
-module.exports = async (client, guild) => {
+module.exports.run = async (client, low, FileSync, adapter, db, guild) => {
     db.set(`${guild.id}`, []).write();
 
     let membros = guild.members;
+
+    db.get(`${guild.id}`).push
+    ({
+      id: guild.id,
+      apelido: 1500,
+      cargos: [],
+      raids: [{
+          nome: "Patrick Thanos", 
+          imagem: "https://cdn.glitch.com/685516c9-2952-4b63-bebc-7628cdba95ae%2FPatrick%20Thanos.jpg?v=1588982045840",
+          lvl: 3
+        }],
+      horaraid: "20:30",
+      canalraid: guild.systemChannel.id,
+      audios: [{
+          nome: "xavasca",
+          link: "https://cdn.glitch.com/685516c9-2952-4b63-bebc-7628cdba95ae%2Fxavasca.mp3?v=1585509000424"
+        }]
+    }).write();
 
     membros.forEach(membro => {
         if(membro.user.id === client.user.id) return;

@@ -10,10 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
+    "ffmpeg-static": "^4.0.1",
     "fs": "0.0.1-security",
     "jimp": "^0.9.3",
     "lowdb": "^1.0.0",
     "moment": "^2.27.0",
+    "opusscript": "0.0.6",
     "superagent": "^5.2.2"
   }
 }
